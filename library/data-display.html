@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("carumds-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+            document.documentElement.style.colorScheme =
+              t === "light" ? "light" : "dark";
+            return;
+          }
+        } catch (e) {}
+        var m = window.matchMedia("(prefers-color-scheme: light)").matches;
+        document.documentElement.setAttribute("data-theme", m ? "light" : "dark");
+        document.documentElement.style.colorScheme = m ? "light" : "dark";
+      })();
+    </script>
+    <title>Dados — carumds</title>
+    <link rel="stylesheet" href="../css/design-tokens.css" />
+    <link rel="stylesheet" href="../css/core-components.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/storybook-shell.css" />
+    <link rel="stylesheet" href="../css/theme.css" />
+  </head>
+  <body class="md-body">
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position: absolute; width: 0; height: 0" aria-hidden="true">
+      <symbol id="icon-plus" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 1a1 1 0 0 1 1 1v5h5a1 1 0 1 1 0 2H9v5a1 1 0 1 1-2 0V10H2a1 1 0 0 1 0-2h5V2a1 1 0 0 1 1-1Z" />
+      </symbol>
+    </svg>
+
+    <div class="md-app" id="md-app">
+      <div class="md-scrim" id="md-scrim" aria-hidden="true"></div>
+
+      <nav class="md-nav" aria-label="Documentação">
+        <div class="md-nav__brand">
+          <div class="md-nav__brand-icon" aria-hidden="true">C</div>
+          <div class="md-nav__brand-text">
+            <p class="md-nav__title">carumds</p>
+            <p class="md-nav__subtitle">Design system</p>
+          </div>
+        </div>
+        <div class="md-nav__search">
+          <div class="md-nav__search-wrap">
+            <span class="ms" aria-hidden="true">search</span>
+            <input type="search" id="md-nav-filter" placeholder="Filtrar secções" autocomplete="off" aria-label="Filtrar lista de secções" />
+          </div>
+        </div>
+        <p class="md-nav__label">Navegação</p>
+        <ul class="md-nav__list" role="list">
+          <li role="listitem">
+            <a class="md-nav__link" href="../index.html"><span class="ms" aria-hidden="true">home</span>Início</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="index.html"><span class="ms" aria-hidden="true">widgets</span>Componentes</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="actions.html"><span class="ms" aria-hidden="true">smart_button</span>Ações</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="inputs.html"><span class="ms" aria-hidden="true">edit_note</span>Entrada de dados</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="navigation.html"><span class="ms" aria-hidden="true">explore</span>Navegação</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="feedback.html"><span class="ms" aria-hidden="true">feedback</span>Feedback</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="data-display.html" aria-current="page"><span class="ms" aria-hidden="true">table</span>Dados</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="surfaces.html"><span class="ms" aria-hidden="true">layers</span>Superfícies</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="utilities.html"><span class="ms" aria-hidden="true">tune</span>Utilitários</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="md-main-wrap">
+        <header class="md-top-bar">
+          <button type="button" class="md-top-bar__menu" id="md-open-nav" aria-label="Abrir navegação">
+            <span class="ms">menu</span>
+          </button>
+          <div class="md-top-bar__heading">
+            <h1>Dados</h1>
+            <p>Tabelas · etiquetas · avatares · passos</p>
+          </div>
+          <div class="md-top-bar__actions">
+            <button type="button" class="md-icon-btn" id="md-theme-toggle" aria-pressed="false" aria-label="Alternar tema claro ou escuro" title="Tema">
+              <span class="ms">light_mode</span>
+            </button>
+          </div>
+        </header>
+
+        <main class="md-content" id="main-content">
+          <section class="md-story" id="avatar" aria-labelledby="ttl-avatar">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-avatar">Avatar · Avatar Stack</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <div class="cc-demo__label">Tamanhos</div>
+                <div class="cc-row">
+                  <span class="cc-avatar cc-avatar--sm">AB</span>
+                  <span class="cc-avatar cc-avatar--md">CD</span>
+                  <span class="cc-avatar cc-avatar--lg">EF</span>
+                </div>
+                <div class="cc-demo__label" style="margin-top: var(--crm-spacing-md)">Stack</div>
+                <div class="cc-avatar-stack">
+                  <span class="cc-avatar cc-avatar--md">A</span>
+                  <span class="cc-avatar cc-avatar--md">B</span>
+                  <span class="cc-avatar cc-avatar--md">C</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="badge" aria-labelledby="ttl-badge">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-badge">Badge</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <div class="cc-row">
+                  <span class="cc-badge">3</span>
+                  <span class="cc-badge cc-badge--neutral">Novo</span>
+                  <span class="cc-badge cc-badge--critical">!</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="tag" aria-labelledby="ttl-tag">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-tag">Tag</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <div class="cc-row">
+                  <span class="cc-tag">Default</span>
+                  <span class="cc-tag cc-tag--primary">Primary</span>
+                  <span class="cc-tag cc-tag--critical">Erro</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="table" aria-labelledby="ttl-table">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-table">Table (Header, Cell Text, Tag, Status, etc.)</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <div class="cc-table-wrap">
+                  <table class="cc-table">
+                    <thead>
+                      <tr>
+                        <th>Nome</th>
+                        <th>Estado</th>
+                        <th>Ação</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Item A</td>
+                        <td><span class="cc-tag cc-tag--primary">Ativo</span></td>
+                        <td><button type="button" class="btn btn--xs btn--neutral btn--ghost">Abrir</button></td>
+                      </tr>
+                      <tr>
+                        <td>Item B</td>
+                        <td><span class="cc-tag">Pendente</span></td>
+                        <td>
+                          <label class="cc-switch" style="transform: scale(0.85)"><input type="checkbox" /><span class="cc-switch__slider"></span></label>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="steps" aria-labelledby="ttl-steps">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-steps">Steps</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <ol class="cc-steps">
+                  <li class="is-done">Dados</li>
+                  <li class="is-current">Rever</li>
+                  <li>Concluir</li>
+                </ol>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="multi-select" aria-labelledby="ttl-multi-select">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-multi-select">_Multi Select Item</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <div class="cc-multi-item"><span>Etiqueta</span><button type="button" class="btn btn--xs btn--neutral btn--ghost" aria-label="Remover">×</button></div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <button type="button" class="md-fab" aria-label="Acção principal (exemplo)">
+      <span class="ms">add</span>
+    </button>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/demos.js"></script>
+  </body>
+</html>

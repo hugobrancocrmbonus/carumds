@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("carumds-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+            document.documentElement.style.colorScheme =
+              t === "light" ? "light" : "dark";
+            return;
+          }
+        } catch (e) {}
+        var m = window.matchMedia("(prefers-color-scheme: light)").matches;
+        document.documentElement.setAttribute("data-theme", m ? "light" : "dark");
+        document.documentElement.style.colorScheme = m ? "light" : "dark";
+      })();
+    </script>
+    <title>carumds — Design system</title>
+    <link rel="stylesheet" href="css/design-tokens.css" />
+    <link rel="stylesheet" href="css/core-components.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/storybook-shell.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/m3-landing.css" />
+  </head>
+  <body class="md-body">
+    <div class="md-app" id="md-app">
+      <div class="md-scrim" id="md-scrim" aria-hidden="true"></div>
+
+      <nav class="md-nav" aria-label="Documentação">
+        <div class="md-nav__brand">
+          <div class="md-nav__brand-icon" aria-hidden="true">C</div>
+          <div class="md-nav__brand-text">
+            <p class="md-nav__title">carumds</p>
+            <p class="md-nav__subtitle">Design system</p>
+          </div>
+        </div>
+        <div class="md-nav__search">
+          <div class="md-nav__search-wrap">
+            <span class="ms" aria-hidden="true">search</span>
+            <input
+              type="search"
+              id="md-nav-filter"
+              placeholder="Filtrar secções"
+              autocomplete="off"
+              aria-label="Filtrar lista de secções"
+            />
+          </div>
+        </div>
+        <p class="md-nav__label">Navegação</p>
+        <ul class="md-nav__list" role="list">
+          <li role="listitem">
+            <a class="md-nav__link" href="index.html" aria-current="page"
+              ><span class="ms" aria-hidden="true">home</span>Início</a
+            >
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="library/index.html"
+              ><span class="ms" aria-hidden="true">widgets</span>Componentes</a
+            >
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="library/actions.html"
+              ><span class="ms" aria-hidden="true">smart_button</span>Ações</a
+            >
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="library/inputs.html"
+              ><span class="ms" aria-hidden="true">edit_note</span>Entrada de dados</a
+            >
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="library/navigation.html"
+              ><span class="ms" aria-hidden="true">explore</span>Navegação</a
+            >
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="library/feedback.html"
+              ><span class="ms" aria-hidden="true">feedback</span>Feedback</a
+            >
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="library/data-display.html"
+              ><span class="ms" aria-hidden="true">table</span>Dados</a
+            >
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="library/surfaces.html"
+              ><span class="ms" aria-hidden="true">layers</span>Superfícies</a
+            >
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="library/utilities.html"
+              ><span class="ms" aria-hidden="true">tune</span>Utilitários</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="md-main-wrap">
+        <header class="md-top-bar">
+          <button type="button" class="md-top-bar__menu" id="md-open-nav" aria-label="Abrir navegação">
+            <span class="ms">menu</span>
+          </button>
+          <div class="md-top-bar__heading">
+            <h1>Material Design 3 · carumds</h1>
+            <p>Documentação em várias páginas · tokens CRM · pronto para GitHub Pages</p>
+          </div>
+          <nav class="md-top-bar__nav" aria-label="Atalhos">
+            <a href="library/index.html">Componentes</a>
+          </nav>
+          <div class="md-top-bar__actions">
+            <button type="button" class="md-icon-btn" id="md-theme-toggle" aria-pressed="false" aria-label="Alternar tema claro ou escuro" title="Tema">
+              <span class="ms">light_mode</span>
+            </button>
+          </div>
+        </header>
+
+        <main class="md-content md-landing" id="main-content">
+          <section class="md-landing__hero" aria-labelledby="landing-title">
+            <p class="md-landing__eyebrow">Design system</p>
+            <h2 class="md-landing__title" id="landing-title">Constrói interfaces consistentes com carumds</h2>
+            <p class="md-landing__lead">
+              Biblioteca inspirada na hierarquia de
+              <a href="https://m3.material.io/" rel="noopener noreferrer">Material Design 3</a>: navegação por
+              secções, cartões de conteúdo e tema claro ou escuro com persistência. Coloca esta pasta na raiz do
+              repositório e activa GitHub Pages.
+            </p>
+            <div class="md-landing__actions">
+              <a class="md-landing__btn md-landing__btn--filled" href="library/index.html">Ver componentes</a>
+              <a class="md-landing__btn md-landing__btn--outline" href="library/actions.html">Começar por ações</a>
+            </div>
+          </section>
+
+          <h3 class="md-landing__section-title">Secções da biblioteca</h3>
+          <div class="md-landing__grid">
+            <a class="md-landing-card" href="library/actions.html">
+              <div class="md-landing-card__body">
+                <h4 class="md-landing-card__title">Ações</h4>
+                <p class="md-landing-card__desc">Botões e coach marks para fluxos principais.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+            <a class="md-landing-card" href="library/inputs.html">
+              <div class="md-landing-card__body">
+                <h4 class="md-landing-card__title">Entrada de dados</h4>
+                <p class="md-landing-card__desc">Campos, selecção, calendário e uploads.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+            <a class="md-landing-card" href="library/navigation.html">
+              <div class="md-landing-card__body">
+                <h4 class="md-landing-card__title">Navegação</h4>
+                <p class="md-landing-card__desc">Breadcrumb, separadores, paginação e barras.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+            <a class="md-landing-card" href="library/feedback.html">
+              <div class="md-landing-card__body">
+                <h4 class="md-landing-card__title">Feedback</h4>
+                <p class="md-landing-card__desc">Alertas, progresso, estados vazios e ajuda contextual.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+            <a class="md-landing-card" href="library/data-display.html">
+              <div class="md-landing-card__body">
+                <h4 class="md-landing-card__title">Dados</h4>
+                <p class="md-landing-card__desc">Tabelas, etiquetas, avatares e passos.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+            <a class="md-landing-card" href="library/surfaces.html">
+              <div class="md-landing-card__body">
+                <h4 class="md-landing-card__title">Superfícies</h4>
+                <p class="md-landing-card__desc">Acordeões, diálogos, drawers e menus.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+            <a class="md-landing-card" href="library/utilities.html">
+              <div class="md-landing-card__body">
+                <h4 class="md-landing-card__title">Utilitários</h4>
+                <p class="md-landing-card__desc">Divisores, overlay, scroll e mais.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <button type="button" class="md-fab" aria-label="Acção principal (exemplo)">
+      <span class="ms">add</span>
+    </button>
+
+    <script src="js/theme.js"></script>
+    <script src="js/demos.js"></script>
+  </body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("carumds-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+            document.documentElement.style.colorScheme =
+              t === "light" ? "light" : "dark";
+            return;
+          }
+        } catch (e) {}
+        var m = window.matchMedia("(prefers-color-scheme: light)").matches;
+        document.documentElement.setAttribute("data-theme", m ? "light" : "dark");
+        document.documentElement.style.colorScheme = m ? "light" : "dark";
+      })();
+    </script>
+    <title>Componentes — carumds</title>
+    <link rel="stylesheet" href="../css/design-tokens.css" />
+    <link rel="stylesheet" href="../css/core-components.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/storybook-shell.css" />
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/m3-landing.css" />
+  </head>
+  <body class="md-body">
+    <div class="md-app" id="md-app">
+      <div class="md-scrim" id="md-scrim" aria-hidden="true"></div>
+
+      <nav class="md-nav" aria-label="Documentação">
+        <div class="md-nav__brand">
+          <div class="md-nav__brand-icon" aria-hidden="true">C</div>
+          <div class="md-nav__brand-text">
+            <p class="md-nav__title">carumds</p>
+            <p class="md-nav__subtitle">Design system</p>
+          </div>
+        </div>
+        <div class="md-nav__search">
+          <div class="md-nav__search-wrap">
+            <span class="ms" aria-hidden="true">search</span>
+            <input type="search" id="md-nav-filter" placeholder="Filtrar secções" autocomplete="off" aria-label="Filtrar lista de secções" />
+          </div>
+        </div>
+        <p class="md-nav__label">Navegação</p>
+        <ul class="md-nav__list" role="list">
+          <li role="listitem">
+            <a class="md-nav__link" href="../index.html"><span class="ms" aria-hidden="true">home</span>Início</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="index.html" aria-current="page"><span class="ms" aria-hidden="true">widgets</span>Componentes</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="actions.html"><span class="ms" aria-hidden="true">smart_button</span>Ações</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="inputs.html"><span class="ms" aria-hidden="true">edit_note</span>Entrada de dados</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="navigation.html"><span class="ms" aria-hidden="true">explore</span>Navegação</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="feedback.html"><span class="ms" aria-hidden="true">feedback</span>Feedback</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="data-display.html"><span class="ms" aria-hidden="true">table</span>Dados</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="surfaces.html"><span class="ms" aria-hidden="true">layers</span>Superfícies</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="utilities.html"><span class="ms" aria-hidden="true">tune</span>Utilitários</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="md-main-wrap">
+        <header class="md-top-bar">
+          <button type="button" class="md-top-bar__menu" id="md-open-nav" aria-label="Abrir navegação">
+            <span class="ms">menu</span>
+          </button>
+          <div class="md-top-bar__heading">
+            <h1>Biblioteca de componentes</h1>
+            <p>Escolhe uma categoria · cada página carrega só os exemplos necessários</p>
+          </div>
+          <nav class="md-top-bar__nav" aria-label="Atalhos">
+            <a href="../index.html">Início</a>
+          </nav>
+          <div class="md-top-bar__actions">
+            <button type="button" class="md-icon-btn" id="md-theme-toggle" aria-pressed="false" aria-label="Alternar tema claro ou escuro" title="Tema">
+              <span class="ms">light_mode</span>
+            </button>
+          </div>
+        </header>
+
+        <main class="md-content md-landing" id="main-content">
+          <p class="md-landing__lead" style="margin-bottom: var(--crm-spacing-xl)">
+            Os componentes estão organizados por tipo (como em
+            <a href="https://m3.material.io/components" rel="noopener noreferrer">M3 Components</a>). Usa o menu lateral
+            para saltar entre páginas — sem lista infinita de âncoras num único ficheiro.
+          </p>
+          <h2 class="md-landing__section-title">Categorias</h2>
+          <div class="md-landing__grid">
+            <a class="md-landing-card" href="actions.html">
+              <div class="md-landing-card__body">
+                <h3 class="md-landing-card__title">Ações</h3>
+                <p class="md-landing-card__desc">Button, icon button, coach mark.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+            <a class="md-landing-card" href="inputs.html">
+              <div class="md-landing-card__body">
+                <h3 class="md-landing-card__title">Entrada de dados</h3>
+                <p class="md-landing-card__desc">Texto, área, select, pesquisa, opções, calendário, ficheiros.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+            <a class="md-landing-card" href="navigation.html">
+              <div class="md-landing-card__body">
+                <h3 class="md-landing-card__title">Navegação</h3>
+                <p class="md-landing-card__desc">Breadcrumb, tabs, paginação, sidebar, topbar, nav dots.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+            <a class="md-landing-card" href="feedback.html">
+              <div class="md-landing-card__body">
+                <h3 class="md-landing-card__title">Feedback</h3>
+                <p class="md-landing-card__desc">Alertas, progresso, spinner, empty, tooltip, popover.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+            <a class="md-landing-card" href="data-display.html">
+              <div class="md-landing-card__body">
+                <h3 class="md-landing-card__title">Dados</h3>
+                <p class="md-landing-card__desc">Tabela, tags, badges, avatares, passos, multi-select.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+            <a class="md-landing-card" href="surfaces.html">
+              <div class="md-landing-card__body">
+                <h3 class="md-landing-card__title">Superfícies</h3>
+                <p class="md-landing-card__desc">Accordion, dialog, drawer, dropdown.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+            <a class="md-landing-card" href="utilities.html">
+              <div class="md-landing-card__body">
+                <h3 class="md-landing-card__title">Utilitários</h3>
+                <p class="md-landing-card__desc">Divider, overlay, scrollbar.</p>
+              </div>
+              <div class="md-landing-card__footer">Abrir →</div>
+            </a>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <button type="button" class="md-fab" aria-label="Acção principal (exemplo)">
+      <span class="ms">add</span>
+    </button>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/demos.js"></script>
+  </body>
+</html>

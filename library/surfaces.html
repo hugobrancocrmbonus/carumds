@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("carumds-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+            document.documentElement.style.colorScheme =
+              t === "light" ? "light" : "dark";
+            return;
+          }
+        } catch (e) {}
+        var m = window.matchMedia("(prefers-color-scheme: light)").matches;
+        document.documentElement.setAttribute("data-theme", m ? "light" : "dark");
+        document.documentElement.style.colorScheme = m ? "light" : "dark";
+      })();
+    </script>
+    <title>Superfícies — carumds</title>
+    <link rel="stylesheet" href="../css/design-tokens.css" />
+    <link rel="stylesheet" href="../css/core-components.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/storybook-shell.css" />
+    <link rel="stylesheet" href="../css/theme.css" />
+  </head>
+  <body class="md-body">
+    <div class="md-app" id="md-app">
+      <div class="md-scrim" id="md-scrim" aria-hidden="true"></div>
+
+      <nav class="md-nav" aria-label="Documentação">
+        <div class="md-nav__brand">
+          <div class="md-nav__brand-icon" aria-hidden="true">C</div>
+          <div class="md-nav__brand-text">
+            <p class="md-nav__title">carumds</p>
+            <p class="md-nav__subtitle">Design system</p>
+          </div>
+        </div>
+        <div class="md-nav__search">
+          <div class="md-nav__search-wrap">
+            <span class="ms" aria-hidden="true">search</span>
+            <input type="search" id="md-nav-filter" placeholder="Filtrar secções" autocomplete="off" aria-label="Filtrar lista de secções" />
+          </div>
+        </div>
+        <p class="md-nav__label">Navegação</p>
+        <ul class="md-nav__list" role="list">
+          <li role="listitem">
+            <a class="md-nav__link" href="../index.html"><span class="ms" aria-hidden="true">home</span>Início</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="index.html"><span class="ms" aria-hidden="true">widgets</span>Componentes</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="actions.html"><span class="ms" aria-hidden="true">smart_button</span>Ações</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="inputs.html"><span class="ms" aria-hidden="true">edit_note</span>Entrada de dados</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="navigation.html"><span class="ms" aria-hidden="true">explore</span>Navegação</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="feedback.html"><span class="ms" aria-hidden="true">feedback</span>Feedback</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="data-display.html"><span class="ms" aria-hidden="true">table</span>Dados</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="surfaces.html" aria-current="page"><span class="ms" aria-hidden="true">layers</span>Superfícies</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="utilities.html"><span class="ms" aria-hidden="true">tune</span>Utilitários</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="md-main-wrap">
+        <header class="md-top-bar">
+          <button type="button" class="md-top-bar__menu" id="md-open-nav" aria-label="Abrir navegação">
+            <span class="ms">menu</span>
+          </button>
+          <div class="md-top-bar__heading">
+            <h1>Superfícies</h1>
+            <p>Accordion · Dialog · Drawer · Dropdown</p>
+          </div>
+          <div class="md-top-bar__actions">
+            <button type="button" class="md-icon-btn" id="md-theme-toggle" aria-pressed="false" aria-label="Alternar tema claro ou escuro" title="Tema">
+              <span class="ms">light_mode</span>
+            </button>
+          </div>
+        </header>
+
+        <main class="md-content" id="main-content">
+          <section class="md-story" id="accordion" aria-labelledby="ttl-accordion">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-accordion">Accordion</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <details class="cc-accordion">
+                  <summary class="cc-accordion__trigger">Secção um</summary>
+                  <div class="cc-accordion__panel">Conteúdo do painel. Use <code>&lt;details&gt;</code> para comportamento nativo.</div>
+                </details>
+                <details class="cc-accordion">
+                  <summary class="cc-accordion__trigger">Secção dois</summary>
+                  <div class="cc-accordion__panel">Mais conteúdo.</div>
+                </details>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="accordion-item" aria-labelledby="ttl-accordion-item">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-accordion-item">Accordion item</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <p class="cc-demo__label">Item = mesmo bloco <code>.cc-accordion</code> (variante única no HTML).</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="dialog" aria-labelledby="ttl-dialog">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-dialog">Dialog</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <button type="button" class="btn btn--sm btn--primary btn--solid" id="open-dialog">Abrir dialog</button>
+                <dialog id="demo-dialog" class="cc-dialog">
+                  <h2>Título do dialog</h2>
+                  <p>Corpo com texto de exemplo. Feche com o botão ou Escape.</p>
+                  <div class="cc-row">
+                    <button type="button" class="btn btn--sm btn--neutral btn--ghost" id="close-dialog">Fechar</button>
+                    <button type="button" class="btn btn--sm btn--primary btn--solid" onclick="document.getElementById('demo-dialog').close()">OK</button>
+                  </div>
+                </dialog>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="drawer" aria-labelledby="ttl-drawer">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-drawer">Drawer</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <button type="button" class="btn btn--sm btn--primary btn--outline" id="toggle-drawer">Alternar drawer</button>
+                <div class="cc-drawer-demo" style="margin-top: var(--crm-spacing-md)">
+                  <aside class="cc-drawer" id="demo-drawer" aria-hidden="true">
+                    <strong>Drawer</strong>
+                    <p style="color: var(--crm-fg-on-surface-neutral-moderate); font-size: 12px; margin: 8px 0 0">Painel lateral.</p>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="dropdown" aria-labelledby="ttl-dropdown">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-dropdown">Dropdown list · _Dropdown item · _Dropdown parent item</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <div class="cc-dropdown">
+                  <button type="button" class="btn btn--sm btn--neutral btn--outline" id="dropdown-btn">Abrir lista</button>
+                  <ul class="cc-dropdown__menu" id="dropdown-menu" role="menu" hidden>
+                    <li><button type="button" role="menuitem">Item filho</button></li>
+                    <li><button type="button" role="menuitem">Outro item</button></li>
+                    <li><button type="button" role="menuitem">Item com ícone</button></li>
+                  </ul>
+                </div>
+                <p class="cc-demo__label" style="margin-top: var(--crm-spacing-xs)">Parent item = primeiro nível no Figma; aqui o botão dispara o menu.</p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <button type="button" class="md-fab" aria-label="Acção principal (exemplo)">
+      <span class="ms">add</span>
+    </button>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/demos.js"></script>
+  </body>
+</html>

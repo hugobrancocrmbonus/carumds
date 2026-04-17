@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("carumds-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+            document.documentElement.style.colorScheme =
+              t === "light" ? "light" : "dark";
+            return;
+          }
+        } catch (e) {}
+        var m = window.matchMedia("(prefers-color-scheme: light)").matches;
+        document.documentElement.setAttribute("data-theme", m ? "light" : "dark");
+        document.documentElement.style.colorScheme = m ? "light" : "dark";
+      })();
+    </script>
+    <title>Feedback — carumds</title>
+    <link rel="stylesheet" href="../css/design-tokens.css" />
+    <link rel="stylesheet" href="../css/core-components.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/storybook-shell.css" />
+    <link rel="stylesheet" href="../css/theme.css" />
+  </head>
+  <body class="md-body">
+    <div class="md-app" id="md-app">
+      <div class="md-scrim" id="md-scrim" aria-hidden="true"></div>
+
+      <nav class="md-nav" aria-label="Documentação">
+        <div class="md-nav__brand">
+          <div class="md-nav__brand-icon" aria-hidden="true">C</div>
+          <div class="md-nav__brand-text">
+            <p class="md-nav__title">carumds</p>
+            <p class="md-nav__subtitle">Design system</p>
+          </div>
+        </div>
+        <div class="md-nav__search">
+          <div class="md-nav__search-wrap">
+            <span class="ms" aria-hidden="true">search</span>
+            <input type="search" id="md-nav-filter" placeholder="Filtrar secções" autocomplete="off" aria-label="Filtrar lista de secções" />
+          </div>
+        </div>
+        <p class="md-nav__label">Navegação</p>
+        <ul class="md-nav__list" role="list">
+          <li role="listitem">
+            <a class="md-nav__link" href="../index.html"><span class="ms" aria-hidden="true">home</span>Início</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="index.html"><span class="ms" aria-hidden="true">widgets</span>Componentes</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="actions.html"><span class="ms" aria-hidden="true">smart_button</span>Ações</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="inputs.html"><span class="ms" aria-hidden="true">edit_note</span>Entrada de dados</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="navigation.html"><span class="ms" aria-hidden="true">explore</span>Navegação</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="feedback.html" aria-current="page"><span class="ms" aria-hidden="true">feedback</span>Feedback</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="data-display.html"><span class="ms" aria-hidden="true">table</span>Dados</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="surfaces.html"><span class="ms" aria-hidden="true">layers</span>Superfícies</a>
+          </li>
+          <li role="listitem">
+            <a class="md-nav__link" href="utilities.html"><span class="ms" aria-hidden="true">tune</span>Utilitários</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="md-main-wrap">
+        <header class="md-top-bar">
+          <button type="button" class="md-top-bar__menu" id="md-open-nav" aria-label="Abrir navegação">
+            <span class="ms">menu</span>
+          </button>
+          <div class="md-top-bar__heading">
+            <h1>Feedback</h1>
+            <p>Alertas · progresso · estados vazios · ajuda contextual</p>
+          </div>
+          <div class="md-top-bar__actions">
+            <button type="button" class="md-icon-btn" id="md-theme-toggle" aria-pressed="false" aria-label="Alternar tema claro ou escuro" title="Tema">
+              <span class="ms">light_mode</span>
+            </button>
+          </div>
+        </header>
+
+        <main class="md-content" id="main-content">
+          <section class="md-story" id="alert" aria-labelledby="ttl-alert">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-alert">Alert</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <div class="cc-row" style="flex-direction: column; align-items: flex-start">
+                  <div class="cc-alert cc-alert--default" role="alert">
+                    <div>
+                      <p class="cc-alert__title">Título</p>
+                      <p class="cc-alert__body">Mensagem default sobre fundo surface lower.</p>
+                    </div>
+                  </div>
+                  <div class="cc-alert cc-alert--informative" role="alert">
+                    <div>
+                      <p class="cc-alert__title">Informativo</p>
+                      <p class="cc-alert__body">Texto auxiliar com tom informativo.</p>
+                    </div>
+                  </div>
+                  <div class="cc-alert cc-alert--success" role="alert">
+                    <div>
+                      <p class="cc-alert__title">Sucesso</p>
+                      <p class="cc-alert__body">Operação concluída.</p>
+                    </div>
+                  </div>
+                  <div class="cc-alert cc-alert--critical" role="alert">
+                    <div>
+                      <p class="cc-alert__title">Crítico</p>
+                      <p class="cc-alert__body">Algo correu mal.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="progress" aria-labelledby="ttl-progress">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-progress">Progress Bar · Progress Status</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <div class="cc-progress-bar" aria-label="Progresso"><div class="cc-progress-bar__fill"></div></div>
+                <div class="cc-progress-status" style="margin-top: var(--crm-spacing-md)">
+                  <span class="cc-progress-status__dot" aria-hidden="true"></span>
+                  A processar…
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="spinner" aria-labelledby="ttl-spinner">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-spinner">Spinner</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <div class="cc-spinner" role="status" aria-label="A carregar"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="empty" aria-labelledby="ttl-empty">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-empty">Empty States</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <div class="cc-empty">
+                  <div class="cc-empty__icon" aria-hidden="true"></div>
+                  <h3>Sem resultados</h3>
+                  <p>Ajuste os filtros ou crie um novo registo.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="tooltip" aria-labelledby="ttl-tooltip">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-tooltip">Tooltip</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <span class="cc-tooltip-host" data-tooltip="Texto de ajuda">Passa o rato aqui</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="md-story" id="popover" aria-labelledby="ttl-popover">
+            <div class="md-story-card">
+              <header class="md-story-card__header">
+                <h2 class="md-story-card__title" id="ttl-popover">Popover</h2>
+                <span class="md-story-card__meta">components.css</span>
+              </header>
+              <div class="md-story-card__canvas">
+                <div class="cc-popover-wrap">
+                  <button type="button" class="btn btn--sm btn--neutral btn--outline">Âncora</button>
+                  <div class="cc-popover" role="tooltip">Texto do popover</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <button type="button" class="md-fab" aria-label="Acção principal (exemplo)">
+      <span class="ms">add</span>
+    </button>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/demos.js"></script>
+  </body>
+</html>

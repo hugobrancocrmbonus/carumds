@@ -1,0 +1,178 @@
+/**
+ * Landing e biblioteca — inspirado em m3.material.io (hero, grelha de cartões, tipografia).
+ */
+
+.md-landing {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--crm-spacing-xl) var(--crm-spacing-md) var(--crm-spacing-xl2);
+}
+
+.md-landing__hero {
+  margin-bottom: var(--crm-spacing-xl2);
+}
+
+.md-landing__eyebrow {
+  margin: 0 0 var(--crm-spacing-sm);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--md-sys-color-primary);
+}
+
+.md-landing__title {
+  margin: 0 0 var(--crm-spacing-md);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--md-sys-color-on-surface);
+}
+
+.md-landing__lead {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.md-landing__lead a {
+  color: var(--md-sys-color-primary);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--md-sys-color-primary) 45%, transparent);
+  text-underline-offset: 3px;
+}
+
+.md-landing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--crm-spacing-sm);
+  margin-top: var(--crm-spacing-lg);
+}
+
+.md-landing__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 var(--crm-spacing-lg);
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.md-landing__btn--filled {
+  background: var(--crm-bg-regular-primary-enabled);
+  color: var(--crm-fg-on-surface-neutral-inverse);
+  box-shadow: var(--md-elevation-1);
+}
+
+.md-landing__btn--filled:hover {
+  background: var(--crm-bg-regular-primary-hovered);
+}
+
+.md-landing__btn--outline {
+  border: 1px solid color-mix(in srgb, var(--md-sys-color-outline) 55%, transparent);
+  color: var(--md-sys-color-primary);
+  background: transparent;
+}
+
+.md-landing__btn--outline:hover {
+  background: color-mix(in srgb, var(--crm-fg-on-surface-primary-default) 10%, transparent);
+}
+
+.md-landing__section-title {
+  margin: 0 0 var(--crm-spacing-md);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.md-landing__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--crm-spacing-md);
+}
+
+.md-landing-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--md-shape-corner-large);
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid color-mix(in srgb, var(--md-sys-color-outline) 28%, transparent);
+  box-shadow: var(--md-elevation-1);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.md-landing-card:hover {
+  box-shadow: var(--md-elevation-2);
+  transform: translateY(-2px);
+}
+
+.md-landing-card__body {
+  padding: var(--crm-spacing-md);
+  flex: 1;
+}
+
+.md-landing-card__title {
+  margin: 0 0 var(--crm-spacing-xs);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+}
+
+.md-landing-card__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.md-landing-card__footer {
+  padding: var(--crm-spacing-sm) var(--crm-spacing-md);
+  border-top: 1px solid color-mix(in srgb, var(--md-sys-color-outline) 22%, transparent);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--md-sys-color-primary);
+}
+
+/* Barra superior — links (landing) */
+.md-top-bar__nav {
+  display: none;
+  align-items: center;
+  gap: var(--crm-spacing-xs);
+}
+
+@media (min-width: 600px) {
+  .md-top-bar__nav {
+    display: flex;
+  }
+}
+
+.md-top-bar__nav a {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+  text-decoration: none;
+}
+
+.md-top-bar__nav a:hover {
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 6%, transparent);
+  color: var(--md-sys-color-on-surface);
+}
+
+.md-top-bar__nav a[aria-current="page"] {
+  color: var(--md-sys-color-primary);
+  background: color-mix(in srgb, var(--crm-fg-on-surface-primary-default) 12%, transparent);
+}
